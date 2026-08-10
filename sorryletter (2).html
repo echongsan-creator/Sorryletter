@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I'm Sorry, My unice ❤️</title>
+
+    <!-- Romantic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+            font-family: 'Poppins', sans-serif;
+
+            /* Romantic Background */
+            background:
+                radial-gradient(circle at 20% 20%, #ff4d6d55, transparent 30%),
+                radial-gradient(circle at 80% 80%, #e91e6355, transparent 30%),
+                linear-gradient(135deg, #240014, #70002d, #e91e63);
+
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            color: #ff6b81;
+            font-size: 25px;
+            animation: float 8s linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(2) {
+            left: 30%;
+            animation-delay: 3s;
+            font-size: 35px;
+        }
+
+        .heart:nth-child(3) {
+            left: 55%;
+            animation-delay: 5s;
+        }
+
+        .heart:nth-child(4) {
+            left: 80%;
+            animation-delay: 2s;
+            font-size: 40px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Card */
+        .card {
+            width: 100%;
+            max-width: 650px;
+            padding: 45px 35px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+
+            box-shadow:
+                0 0 30px rgba(255, 0, 80, 0.35),
+                0 20px 60px rgba(0, 0, 0, 0.4);
+
+            animation: appear 1.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Title */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(48px, 10vw, 75px);
+            color: #fff;
+            text-shadow:
+                0 0 10px #ff4d6d,
+                0 0 25px #e91e63;
+
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #ffc4d0;
+            font-size: 15px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* Letter */
+        .letter {
+            background: rgba(255, 255, 255, 0.94);
+            color: #444;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            line-height: 1.8;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .letter p {
+            margin-bottom: 20px;
+        }
+
+        .name {
+            color: #e91e63;
+            font-weight: 700;
+        }
+
+        .sorry {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #e91e63;
+            margin-top: 25px;
+        }
+
+        .signature {
+            text-align: right;
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+            color: #e91e63;
+            margin-top: 25px;
+        }
+
+        /* Button */
+        button {
+            margin-top: 30px;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+
+            background: linear-gradient(135deg, #ff1744, #e91e63);
+            color: white;
+
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+
+            box-shadow:
+                0 0 15px #ff1744,
+                0 8px 20px rgba(0,0,0,0.3);
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow:
+                0 0 30px #ff1744,
+                0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            color: #ffd1dc;
+            font-weight: 500;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 18px;
+            }
+
+            .letter {
+                padding: 22px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 55px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="heart">❤️</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">❤️</div>
+
+    <div class="card">
+
+        <h1>I'm Sorry unice </h1>
+
+        <div class="subtitle">
+            A LETTER FROM MY HEART ❤️
+        </div>
+
+        <div class="letter">
+
+            <p>
+                Dear <span class="name">Myunice</span>,
+            </p>
+
+            <p>
+                I want to sincerely say that I'm sorry for the things
+                I did and the words I said that hurt you.
+                I know that I made mistakes, and I understand that
+                saying sorry cannot immediately erase the pain I caused.
+            </p>
+
+            <p>
+                I'm not here to make excuses. I just want you to know
+                that I realize my mistakes, and I truly regret them.
+                You deserve respect, kindness, honesty, and love.
+            </p>
+
+            <p>
+                If I could turn back time, I would choose my words
+                carefully and treat your heart better. But since I
+                cannot change the past, I can only promise to learn
+                from my mistakes and become a better person.
+            </p>
+
+            <p>
+                I don't expect you to forgive me immediately.
+                Take all the time you need. I just hope that someday,
+                you can see how truly sorry I am.
+            </p>
+
+            <div class="sorry">
+                I Love u baby, ❤️
+            </div>
+
+            <div class="signature">
+                Always yours ❤️
+            </div>
+
+        </div>
+
+        <button onclick="showMessage()">
+            Click This ❤️
+        </button>
+
+        <div id="message">
+            No matter what happens, I will always be grateful
+            for the memories we shared. ❤️
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
